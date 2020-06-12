@@ -11,7 +11,5 @@ export class AppComponent {
     { id: 1, name: 'Love For All, Hatred For None.' },
     { id: 2, name: 'Die with memories, not dreams' },
     { id: 3, name: 'Simplicity is the ultimate sophistication.' },
-
   ];
-
 }
