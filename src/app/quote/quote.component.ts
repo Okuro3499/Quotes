@@ -9,10 +9,14 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    { id: 1, name: 'Love For All, Hatred For None.', description: 'by Khalifatul Masih III' },
-    { id: 2, name: 'Die with memories, not dreams', description: 'by T.S Eliot' },
-    { id: 3, name: 'Simplicity is the ultimate sophistication.', description: 'by Leonardo da Vinci' },
+    new Quote(1, 'Love For All, Hatred For None.', 'by Khalifatul Masih III'),
+    new Quote(2, 'Die with memories, not dreams', 'by T.S Eliot'),
+    new Quote(3, 'Simplicity is the ultimate sophistication.', 'by Leonardo da Vinci'),
   ];
+
+  toggleDetails(index) {
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
 
   constructor() { }
 
