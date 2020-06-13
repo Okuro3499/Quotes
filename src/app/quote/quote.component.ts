@@ -28,9 +28,19 @@ export class QuoteComponent implements OnInit {
     }
   }
 
+  addNewQuote(quote) {
+    // tslint:disable-next-line: prefer-const
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength + 1;
+    // tslint:disable-next-line: semicolon
+    quote.completeDate = new Date(quote.completeDate)
+    // tslint:disable-next-line: semicolon
+    this.quotes.push(quote)
+  }
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
