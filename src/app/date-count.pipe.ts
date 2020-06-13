@@ -11,7 +11,7 @@ export class DateCountPipe implements PipeTransform {
     // tslint:disable-next-line: prefer-const
     let todayWithNoTime: any = new Date(today.getFullYear(), today.getMonth(), today.getDate())
     // tslint:disable-next-line: prefer-const && no-var-keyword
-    var dateDifference = Math.abs(value - todayWithNoTime); // returns value in milliseconds
+    var dateDifference = Math.abs(todayWithNoTime - value); // returns value in milliseconds
     const secondsInDay = 86400; // 60secs * 60mins in an hr * 24hrs in a day
     // tslint:disable-next-line: prefer-const && no-var-keyword
     var dateDifferenceSeconds = dateDifference * 0.001; // converts milliseconds to secs

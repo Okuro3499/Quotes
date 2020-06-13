@@ -17,6 +17,16 @@ export class QuoteComponent implements OnInit {
   toggleDetails(index) {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
+  deleteQuote(isComplete, index) {
+    if (isComplete) {
+      // tslint:disable-next-line: prefer-const && semicolon
+      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
+      if (toDelete) {
+        // tslint:disable-next-line: semicolon
+        this.quotes.splice(index, 1)
+      }
+    }
+  }
 
   constructor() { }
 
