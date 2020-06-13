@@ -1,23 +1,26 @@
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Jura|Russo+One|Viga" rel="stylesheet">
+
 <div class="container">
-    <h1><strong>QUOTES</strong></h1>
+    <h1 class="quoteheader"><strong>QUOTES</strong></h1>
     <hr>
+    <div class="qback">
+        <div class="row">
+            <div class="col-md-6">
+                <div *ngFor='let quote of quotes;let i = index'>
+                    <div>
+                        <h4 highlight>{{quote.name}} posted on {{quote.completeDate|date|uppercase}}</h4>
+                        <button (click)='toggleDetails(i)' class=btn btn-primary>Toggle Details</button>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div *ngFor='let quote of quotes;let i = index'>
-                <div>
-                    <h4 highlight>{{quote.name}} posted on {{quote.completeDate|date|uppercase}}</h4>
-                    <button (click)='toggleDetails(i)' class=btn btn-primary>Toggle Details</button>
-
-                    <div *ngIf='quote.showDescription'>
-                        <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
+                        <div *ngIf='quote.showDescription'>
+                            <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+            </div>
         </div>
-        <div class="col-md-6">
-            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-        </div>
-
     </div>
+
 </div>

@@ -1,0 +1,13 @@
+.quoteheader {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: black;
+    color: #fff;
+}
+
+.qback {
+    background-image: url(./images/quotes.jpg);
+    background-size: cover;
+    height: 500px;
+    color: #fff;
+}
