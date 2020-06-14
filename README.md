@@ -42,7 +42,8 @@ To work With this cli {follow the below instructions for set up.}
 
 * To get to use QUOTES fist you need to get to the Quotes-Angular repository.
 
-     Link:-> https://github.com/Okuro3499/Quotes.git
+     Repository Link:-> https://github.com/Okuro3499/Quotes.git
+     Live link:-> https://okuro3499.github.io/Quotes/
 
 * From there you can access Quotes.
 
