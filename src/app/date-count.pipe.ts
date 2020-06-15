@@ -7,7 +7,7 @@ export class DateCountPipe implements PipeTransform {
 
   transform(value: any): number {
     // tslint:disable-next-line: prefer-const
-    let today: Date = new Date(); // get current date and time
+    let today = new Date(); // get current date and time
     // tslint:disable-next-line: prefer-const && semicolon
     let todayWithNoTime: any = new Date(today.getFullYear(), today.getMonth(), today.getDate())
     // tslint:disable-next-line: prefer-const && no-var-keyword
@@ -17,11 +17,8 @@ export class DateCountPipe implements PipeTransform {
     var dateDifferenceSeconds = dateDifference * 0.001; // converts milliseconds to secs
     // tslint:disable-next-line: prefer-const && no-var-keyword
     var dateCounter = dateDifferenceSeconds / secondsInDay;
-
-    if (dateCounter <= 1 && value > todayWithNoTime) {
-      return dateCounter;
-    } else {
-      return 0;
-    }
+    Math.round(dateCounter);
+    return dateCounter;
   }
 }
+
